@@ -4,7 +4,7 @@
 	"description": "Jest, React Testing Library, e2e, screenshot",
 	"private": true,
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "jest"
 	},
 	"repository": {
 		"type": "git",
@@ -15,5 +15,8 @@
 	"bugs": {
 		"url": "https://github.com/Romuelson/practical-testing/issues"
 	},
-	"homepage": "https://github.com/Romuelson/practical-testing#readme"
+	"homepage": "https://github.com/Romuelson/practical-testing#readme",
+	"devDependencies": {
+		"jest": "^27.5.1"
+	}
 }
