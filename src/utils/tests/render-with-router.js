@@ -1,11 +1,13 @@
 import { MemoryRouter } from 'react-router-dom';
 
-import Default from '../../components/default/default';
+import { render } from '@testing-library/react';
+
+import AppRouter from '../../router/app-router';
 
 export const renderWithRouter = (component, initialRoute = '/') => {
-	return (
+	return render(
 		<MemoryRouter initialEntries={[initialRoute]}>
-			<Default />
+			<AppRouter />
 			{ component }
 		</MemoryRouter>
 	);

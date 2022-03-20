@@ -2,16 +2,11 @@
 
 import axios from 'axios';
 
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-
-import { Route, Routes, MemoryRouter } from 'react-router-dom';
-import AppRouter from '../../router/app-router';
 
 import userData from '../../mocks/users-data';
 
-import Users from './users';
-import UserDeteils from '../../pages/user-details/user-details';
 import { renderWithRouter } from '../../utils/tests/render-with-router';
 
 jest.mock('axios');
@@ -30,7 +25,7 @@ describe('Компонент: Users', () => {
 	it('should', async () => {
 		axios.get.mockReturnValue(response);
 
-		render(renderWithRouter(null, '/users'));
+		renderWithRouter(null, '/users');
 
 		const users = await screen.findAllByTestId('userItem');
 		expect(users.length).toBe(3);

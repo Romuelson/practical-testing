@@ -1,21 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Компонент: App should  1`] = `
-<input
-  class="app_input"
-  placeholder="input value..."
-  type="text"
-/>
-`;
-
-exports[`Компонент: App should 1`] = `
-<input
-  class="app_input"
-  placeholder="input value..."
-  type="text"
-/>
-`;
-
 exports[`Компонент: App should-0 1`] = `
 <input
   class="app_input"

@@ -8,9 +8,15 @@ const App = () => {
 	const onClick = () => setToggle(prev => !prev);
 
 	useEffect(() => {
-		setTimeout(() => {
+		let timerOne = setTimeout(() => {
 			setData({});
 		}, 100);
+
+		timerOne();
+
+		return () => {
+			clearTimeout(timerOne);
+		};
 	}, []);
 
 	return (
