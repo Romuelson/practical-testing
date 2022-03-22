@@ -1,14 +1,13 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import React from 'react';
-import Navbar from './navbar';
+import { withGlobalEnvironment } from '../../utils/tests/with-global-environment';
 
-import { renderWithRouter } from '../../utils/tests/render-with-router';
+import Navbar from './navbar';
 
 describe('Компонент: Navbar', () => {
 	it('should', async () => {
-		renderWithRouter(<Navbar />, '/users');
+		withGlobalEnvironment(<Navbar />, {}, '/users');
 
 		const createMainLink = screen.getByTestId('mainLink');
 
@@ -17,7 +16,7 @@ describe('Компонент: Navbar', () => {
 	});
 
 	it('should-1', async () => {
-		renderWithRouter(<Navbar />);
+		withGlobalEnvironment(<Navbar />);
 
 		const createAboutLink = screen.getByTestId('aboutLink');
 
@@ -27,7 +26,7 @@ describe('Компонент: Navbar', () => {
 	});
 
 	it('should-2', async () => {
-		renderWithRouter(<Navbar />);
+		withGlobalEnvironment(<Navbar />);
 
 		const createUsersLink = screen.getByTestId('usersLink');
 

@@ -12,8 +12,6 @@ const App = () => {
 			setData({});
 		}, 100);
 
-		timerOne();
-
 		return () => {
 			clearTimeout(timerOne);
 		};

@@ -6,8 +6,12 @@ const Users = () => {
 	const [users, setUsers] = useState([]);
 
 	const loadUsers = async () => {
-		const response = await axios.get('https://jsonplaceholder.typicode.com/users');
-		setUsers(response.data);
+		try {
+			const response = await axios.get('https://jsonplaceholder.typicode.com/users');
+			setUsers(response.data);
+		} catch (e) {
+
+		};
 	};
 
 	useEffect(() => {
@@ -17,7 +21,7 @@ const Users = () => {
 	return (
 		<div data-testid='usersPage'>
 			{
-				users.map((user) =>
+				users.length && users.map((user) =>
 					<Link
 						to={`/users/${user.id}`}
 						key={user.id}

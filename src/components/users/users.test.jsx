@@ -8,6 +8,7 @@ import userEvent from '@testing-library/user-event';
 import userData from '../../mocks/users-data';
 
 import { renderWithRouter } from '../../utils/tests/render-with-router';
+import { withGlobalEnvironment } from '../../utils/tests/with-global-environment'
 
 jest.mock('axios');
 
@@ -25,7 +26,7 @@ describe('Компонент: Users', () => {
 	it('should', async () => {
 		axios.get.mockReturnValue(response);
 
-		renderWithRouter(null, '/users');
+		withGlobalEnvironment(null, undefined, '/users');
 
 		const users = await screen.findAllByTestId('userItem');
 		expect(users.length).toBe(3);

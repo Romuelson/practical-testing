@@ -1,5 +1,8 @@
 import React from 'react';
 
+import { Provider } from 'react-redux';
+import { createReduxStore } from './store/store';
+
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
@@ -10,9 +13,11 @@ describe('Маршрутизация', () => {
 	test('should', () => {
 		// Если BrowserRouter выше компонента
 		render(
-			<MemoryRouter>
-				<Default />
-			</MemoryRouter>
+			<Provider store={createReduxStore()}>
+				<MemoryRouter>
+					<Default />
+				</MemoryRouter>
+			</Provider>
 		);
 
 		const mainLink = screen.getByTestId('mainLink');
